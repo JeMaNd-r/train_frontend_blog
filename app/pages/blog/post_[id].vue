@@ -19,7 +19,7 @@ const { data: blog_post } = await useFetch<Post>(
 )
 
 const { data: comments } = await useFetch<Comment[]>(
-  'https://jsonplaceholder.typicode.com/comments', 
+  'https://jsonplaceholder.typicode.com/comments',
   {
     query: {
       postId: route.params.id }

@@ -18,8 +18,8 @@ const page = ref(1)
     <UPageGrid>
       <UPageCard
         v-for="post in blog_posts"
-        variant="subtle"
         :key="post.id"
+        variant="subtle"
         class="w-full"
         :title="post.title"
         :description="post.body"
