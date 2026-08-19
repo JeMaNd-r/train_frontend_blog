@@ -1,12 +1,30 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const { data: blog_post } = await useFetch(() => `https://jsonplaceholder.typicode.com/posts/${route.params.id}`)
+interface Post {
+  id: number
+  title: string
+  body: string
+}
 
-const { data: comments } = await useFetch('https://jsonplaceholder.typicode.com/comments', {
-  query: {
-    postId: route.params.id }
-})
+interface Comment {
+  id: number
+  name: string
+  body: string
+  email: string
+}
+
+const { data: blog_post } = await useFetch<Post>(
+  () => `https://jsonplaceholder.typicode.com/posts/${route.params.id}`
+)
+
+const { data: comments } = await useFetch<Comment[]>(
+  'https://jsonplaceholder.typicode.com/comments', 
+  {
+    query: {
+      postId: route.params.id }
+  }
+)
 </script>
 
 <template>
@@ -47,7 +65,7 @@ const { data: comments } = await useFetch('https://jsonplaceholder.typicode.com/
         <template #footer>
           <UUser
             :name="comment.email"
-            avatar="{ alt: comment.email }"
+            :avatar="{ alt: comment.email }"
           />
         </template>
       </UPageCard>

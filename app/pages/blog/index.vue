@@ -1,5 +1,12 @@
 <script setup lang="ts">
-const { data: blog_posts } = await useFetch('https://jsonplaceholder.typicode.com/posts')
+interface Post {
+  id: number
+  title: string
+  body: string
+}
+const { data: blog_posts } = await useFetch<Post[]>(
+  'https://jsonplaceholder.typicode.com/posts'
+)
 
 const page = ref(1)
 </script>
