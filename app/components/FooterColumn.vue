@@ -7,13 +7,11 @@ const columns: FooterColumn[] = [
     children: [
       {
         label: 'Index',
-        to: '/',
-        target: '_blank'
+        to: '/'
       },
       {
         label: 'About',
-        to: '/',
-        target: '_blank'
+        to: '/about'
       }
     ]
   },
@@ -22,18 +20,15 @@ const columns: FooterColumn[] = [
     children: [
       {
         label: 'Posts',
-        to: '/blog',
-        target: '_blank'
+        to: '/blog'
       },
       {
-        label: 'Comments',
-        to: '/blog',
-        target: '_blank'
+        label: 'Example post',
+        to: '/blog/post_1'
       },
       {
         label: 'Photos',
-        to: '/blog',
-        target: '_blank'
+        to: '/blog'
       }
     ]
   }

@@ -47,6 +47,11 @@ const nav_items = ref<NavigationMenuItem[]>([
         to: '/blog/post_1'
       }
     ]
+  },
+  {
+    label: 'About',
+    icon: 'i-lucide-info',
+    to: '/about'
   }
 ])
 </script>
@@ -65,7 +70,7 @@ const nav_items = ref<NavigationMenuItem[]>([
         <UColorModeButton />
 
         <UButton
-          to="https://github.com/jemand-r/train_fronent_blog"
+          to="https://github.com/JeMaNd-r/train_frontend_blog"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"

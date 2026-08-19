@@ -11,9 +11,9 @@ const limit = 12
 const { data: blog_posts } = await useFetch<Post[]>(
   'https://jsonplaceholder.typicode.com/posts', {
     query: {
-        _page: page,
-        _limit: limit
-      }
+      _page: page,
+      _limit: limit
+    }
   }
 )
 </script>
