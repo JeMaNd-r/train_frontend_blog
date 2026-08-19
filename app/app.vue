@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { NavigationMenuItem } from '@nuxt/ui'
+
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -23,28 +25,26 @@ useSeoMeta({
   twitterCard: 'summary_large_image'
 })
 
-import type { NavigationMenuItem } from '@nuxt/ui'
-
 const nav_items = ref<NavigationMenuItem[]>([
   {
-    label: "Home",
-    icon: "i-lucide-house",
-    to: "/"
+    label: 'Home',
+    icon: 'i-lucide-house',
+    to: '/'
   },
   {
-    label: "Blog",
-    icon: "i-lucide-book-open",
-    to: "/blog",
+    label: 'Blog',
+    icon: 'i-lucide-book-open',
+    to: '/blog',
     children: [
       {
-        label: "All posts",
-        icon: "i-lucide-book-open",
-        to: "/blog",
-      }, 
+        label: 'All posts',
+        icon: 'i-lucide-book-open',
+        to: '/blog'
+      },
       {
-        label: "First post",
-        icon: "i-lucide-file-text",
-        to: "/blog/post_1",
+        label: 'First post',
+        icon: 'i-lucide-file-text',
+        to: '/blog/post_1'
       }
     ]
   }
