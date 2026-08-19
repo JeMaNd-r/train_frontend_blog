@@ -13,7 +13,7 @@ const page = ref(1)
 
 <template>
   <div>
-    <p>These are all the blog posts</p>
+    <p>These are all the blog posts.</p>
     <br>
     <UPageGrid>
       <UPageCard
