@@ -4,11 +4,18 @@ interface Post {
   title: string
   body: string
 }
-const { data: blog_posts } = await useFetch<Post[]>(
-  'https://jsonplaceholder.typicode.com/posts'
-)
 
 const page = ref(1)
+const limit = 12
+
+const { data: blog_posts } = await useFetch<Post[]>(
+  'https://jsonplaceholder.typicode.com/posts', {
+    query: {
+        _page: page,
+        _limit: limit
+      }
+  }
+)
 </script>
 
 <template>
@@ -26,9 +33,10 @@ const page = ref(1)
         :to="`/blog/post_${post.id}`"
       />
     </UPageGrid>
+    <br>
     <UPagination
       v-model:page="page"
-      :items-per-page="20"
+      :items-per-page="limit"
       :total="100"
     />
   </div>
