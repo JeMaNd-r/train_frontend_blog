@@ -37,9 +37,39 @@ pnpm preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
+
 ## Renovate integration
 
 Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+
+
+## Screenshots
+
+Here are some screenshots showcasting the main features and interface of the application.
+
+### Homepage
+
+![Homepage](./public/images/Screenshot_Index_20260824.png)
+
+
+### Blog posts with pagination
+
+![Blog posts](./public/images/Screenshot_Blog_20260824.png)
+
+
+### Blog post details with comments
+
+![Example post](./public/images/Screenshot_Post-example_20260824.png)
+
+
+### User details and their posts
+
+![Example user](./public/images/Screenshot_User-example_20260824.png)
+
+
+### About page with GitHub commits
+
+![About](./public/images/Screenshot_About_20260824.png)
 
 
 ## Contributing
