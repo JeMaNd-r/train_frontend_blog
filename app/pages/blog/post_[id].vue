@@ -2,6 +2,7 @@
 const route = useRoute()
 
 interface Post {
+  userId: number
   id: number
   title: string
   body: string
@@ -14,8 +15,24 @@ interface Comment {
   email: string
 }
 
+interface User {
+  id: number
+  name: string
+  username: string
+  email: string
+  company: {
+    name: string
+    catchPhrase: string
+    bs: string
+  }
+}
+
 const { data: blog_post } = await useFetch<Post>(
   () => `https://jsonplaceholder.typicode.com/posts/${route.params.id}`
+)
+
+const { data: user } = await useFetch<User>(
+  `https://jsonplaceholder.typicode.com/users/${blog_post.value?.userId}`
 )
 
 const { data: comments } = await useFetch<Comment[]>(
@@ -45,6 +62,15 @@ const { data: comments } = await useFetch<Comment[]>(
       <p>
         {{ blog_post.body }}
       </p>
+      <template #footer>
+        <UUser
+          v-if="user"
+          :name="user.name"
+          :description="user.company.name"
+          :avatar="{ alt: user.name }"
+          :to="`/users/user_${user.id}`"
+        />
+      </template>
     </UCard>
     <p v-else>
       Blog post with ID {{ route.params.id }} not found.

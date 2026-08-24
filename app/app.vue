@@ -13,7 +13,7 @@ useHead({
   }
 })
 
-const title = 'Cool travel blog'
+const title = 'Cool random blog'
 const description = 'A training project to learn functionalities of Nuxt and NuxtUI as well as connecting to simple API.'
 
 useSeoMeta({
@@ -47,6 +47,11 @@ const nav_items = ref<NavigationMenuItem[]>([
         to: '/blog/post_1'
       }
     ]
+  },
+  {
+    label: 'Users',
+    icon: 'i-lucide-users',
+    to: '/users'
   },
   {
     label: 'About',

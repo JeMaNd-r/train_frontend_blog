@@ -5,6 +5,12 @@ const pages = ref([
     description: 'Blog posts',
     icon: 'i-lucide-book-open',
     to: '/blog'
+  },
+  {
+    title: 'Users',
+    description: 'Who is posting and commenting here',
+    icon: 'i-lucide-users',
+    to: '/users'
   }
 ])
 </script>
