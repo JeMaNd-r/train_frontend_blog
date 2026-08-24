@@ -3,7 +3,7 @@ import type { FooterColumn } from '@nuxt/ui'
 
 const columns: FooterColumn[] = [
   {
-    label: 'About',
+    label: 'App',
     children: [
       {
         label: 'Index',
@@ -25,10 +25,19 @@ const columns: FooterColumn[] = [
       {
         label: 'Example post',
         to: '/blog/post_1'
+      }
+    ]
+  },
+  {
+    label: 'People',
+    children: [
+      {
+        label: 'Users',
+        to: '/users'
       },
       {
-        label: 'Photos',
-        to: '/blog'
+        label: 'Example user',
+        to: '/users/user_1'
       }
     ]
   }
